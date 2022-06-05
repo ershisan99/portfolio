@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import { Button } from '../components/styled/Button.styled'
 import { Input, Textarea } from '../components/styled/Input.Styled'
 import { StyledPage } from '../components/StyledPage'
-
+import emailjs from '@emailjs/browser'
+import { FormEventHandler, useRef } from 'react'
 const StyledContacts = styled.div`
    h1 {
       text-align: center;
@@ -37,6 +38,26 @@ const StyledContacts = styled.div`
 `
 
 export const Contacts = () => {
+   const form = useRef<HTMLFormElement>(null)
+   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      emailjs
+         .sendForm(
+            process.env.REACT_APP_SERVICE_ID || '',
+            process.env.REACT_APP_TEMPLATE_ID || '',
+            form.current || '',
+            process.env.REACT_APP_PUBLIC_KEY
+         )
+         .then(
+            (result) => {
+               alert('Your message has been sent successfully!')
+               form.current && form.current.reset()
+            },
+            (error) => {
+               alert(error.text)
+            }
+         )
+   }
    return (
       <StyledPage id="contacts">
          <StyledContacts>
@@ -45,11 +66,11 @@ export const Contacts = () => {
                Want to build something amazing together? Reach out to me using
                the form below!
             </article>
-            <form>
-               <Input label="Name" />
-               <Input label="Email" />
-               <Textarea rows={5} label="Message" />
-               <Button onSubmit={() => console.log('l;askdjf')}>Send</Button>
+            <form onSubmit={sendEmail} ref={form}>
+               <Input label="Name" type="text" name="user_name" />
+               <Input label="Email" type="email" name="user_email" />
+               <Textarea rows={5} label="Message" name="message" />
+               <Button type="submit">Send</Button>
             </form>
          </StyledContacts>
       </StyledPage>

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
 const StyledLabel = styled.label`
@@ -190,7 +190,7 @@ const StyledLabel = styled.label`
       }
    }
 `
-interface InputPropsType extends React.HTMLAttributes<HTMLInputElement> {
+interface InputPropsType extends InputHTMLAttributes<HTMLInputElement> {
    label: string
    multiline?: boolean
 }

@@ -51,6 +51,8 @@ const StyledNav = styled.nav`
       transform-origin: bottom left;
    }
 `
+
+//todo: add dropdown to skills nav
 export const Header = () => {
    return (
       <StyledHeader>

@@ -4,7 +4,7 @@ export const theme = {
    colors: {
       primary: '#fb3f5c',
       secondary: '#1a1018',
-      accent: '#dde2e5',
+      accent: '#F8EEEF',
       body: 'white',
       text: '#000',
       textSecondary: 'white',
@@ -45,7 +45,6 @@ const GlobalStyles = createGlobalStyle<{ theme: typeof theme }>`
     h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p {
       margin-top: 0;
       margin-bottom: 0;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     margin: 0;

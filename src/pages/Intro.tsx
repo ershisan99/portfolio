@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { Button } from '../components/Button.styled'
-import { StyledPage } from '../components/StyledPage'
 // @ts-ignore (need ignore!)
 import BIRDS from 'vanta/dist/vanta.birds.min'
+import { Button } from '../components/Button.styled'
+import { StyledPage } from '../components/StyledPage'
 import { theme } from '../GlobalStyles'
-import { Header } from '../components/Header'
 const MainInfo = styled.div`
    h1 {
       font-weight: 700;
@@ -33,8 +32,7 @@ const MainInfo = styled.div`
    }
 `
 const Container = styled.div`
-   margin-left: 124px;
-   height: 100%;
+   height: calc(100vh - 64px);
    display: flex;
    align-items: center;
    justify-content: space-between;
@@ -84,6 +82,7 @@ export const Intro = () => {
                   I’m <strong>Andrii Zadorozhnyi</strong>
                </h1>
                <p>Developer and mentor</p>
+               {/* todo: download link */}
                <Button onClick={() => alert('haaa')}>Download CV</Button>
             </MainInfo>
          </Container>

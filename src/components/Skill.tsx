@@ -3,57 +3,55 @@ import styled from 'styled-components'
 import { device } from '../GlobalStyles'
 
 type PropsType = {
-   imgSrc: string
+   Icon: any
    title: string
-   imgAlt: string
 }
 
 const StyledSkill = styled.div`
    padding: 20px 27px;
-   width: 80%;
+   width: 100%;
+   min-width: 280px;
    height: 100px;
-   margin: 0 0 40px 0;
    display: flex;
    align-items: center;
-   background-color: ${({ theme }) => theme.colors.primary}
+   background-color: ${({ theme }) => theme.colors.primary};
    cursor: pointer;
    transition: ease-in-out 0.2s;
-   color: var(--dark_color);
-   border-radius: var(--borderRadiusCustom);
+   color: ${({ theme }) => theme.colors.textSecondary};
+   border-radius: 20px;
 
    h2 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-   }
-   
-   img { 
-    height: auto;
-    width: 80px;
-    transition: ease-in-out 1s;
+      width: 100%;
+      display: flex;
+      justify-content: center;
    }
 
-   &:hover: {
-    transform: scale(1.03);
+   svg {
+      height: auto;
+      width: 80px;
+      transition: ease-in-out 1s;
    }
 
-   &:hover .img {
-    transform: rotate(360deg);
+   &:hover {
+      transform: scale(1.03);
    }
- 
-   @media ${device.laptop} {
-    height: auto;
-    width: 280px; 
 
-    img {
-        width: 70px
-    }
-  }
+   &:hover svg {
+      transform: rotate(360deg);
+   }
+
+   @media ${device.tablet} {
+      height: auto;
+      svg {
+         width: 70px;
+      }
+   }
 `
-export const Skill: FC<PropsType> = ({ imgSrc, title, imgAlt }) => {
+
+export const Skill: FC<PropsType> = ({ Icon, title }) => {
    return (
       <StyledSkill>
-         <img src={imgSrc} alt={imgAlt} />
+         <Icon />
          <h2>{title}</h2>
       </StyledSkill>
    )

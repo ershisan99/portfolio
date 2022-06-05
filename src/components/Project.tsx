@@ -21,9 +21,13 @@ const StyledProject = styled.div`
    min-width: 320px;
    &:hover {
       transform: scale(1.1);
-      a {
+      div {
          visibility: visible;
          opacity: 1;
+      }
+      img {
+         opacity: 0.5;
+         backdrop-filter: blur(3px);
       }
    }
    @media ${device.tablet} {
@@ -45,25 +49,42 @@ const PreviewContainer = styled.div`
    img {
       width: 100%;
       border-radius: 20px 20px 0 0;
+      transition: ease-in-out 0.3s;
    }
    a {
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      top: 40%;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      text-align: center;
-      transition: visibility 0.5s, opacity 0.5s ease-in-out;
-   }
-
-   a:last-of-type {
-      top: 60%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 10px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 27px;
+      cursor: pointer;
+      border: 1px solid ${({ theme }) => theme.colors.primary};
+      background: transparent;
+      width: 100px;
+      color: ${({ theme }) => theme.colors.primary};
+      border-radius: 10px;
+      &:hover {
+         background: ${({ theme }) => theme.colors.primary};
+         color: ${({ theme }) => theme.colors.textSecondary};
+      }
+      text-decoration: none;
    }
 `
-
+const LinkContainer = styled.div`
+   visibility: hidden;
+   opacity: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   transition: visibility 0.5s, opacity 0.5s ease-in-out;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+`
 export const Project: FC<PropsType> = ({
    title,
    text,
@@ -75,12 +96,14 @@ export const Project: FC<PropsType> = ({
       <StyledProject>
          <PreviewContainer>
             <img src={imageSrc} alt={title} />
-            <a href={demoLink}>Demo</a>
-            <a href={codeLink}>Code</a>
+            <LinkContainer>
+               <a href={demoLink}>Demo</a>
+               <a href={codeLink}>Code</a>
+            </LinkContainer>
          </PreviewContainer>
          <InfoContainer>
             <h4>{title}</h4>
-            <text>{text}</text>
+            <p>{text}</p>
          </InfoContainer>
       </StyledProject>
    )

@@ -29,7 +29,7 @@ const StyledProjects = styled.div`
       font-size: 48px;
       margin: 50px 0 70px 0;
    }
-   text {
+   article {
       display: block;
       max-width: 600px;
       font-weight: 400;
@@ -45,16 +45,18 @@ const Container = styled.div`
    gap: 50px;
 `
 export const Projects = () => {
-   const mappedProjects = projects.map((project) => <Project {...project} />)
+   const mappedProjects = projects.map((project) => (
+      <Project {...project} key={project.title} />
+   ))
    return (
       <StyledPage>
          <StyledProjects>
             <h1>My projects</h1>
-            <text>
+            <article>
                Here are some of the projects I've worked on alone or as part of
                a team. These are not the best projects I've ever done, but
                rather most valuable in terms of experience.
-            </text>
+            </article>
             <Container>{mappedProjects}</Container>
          </StyledProjects>
       </StyledPage>

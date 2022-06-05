@@ -74,7 +74,7 @@ const Container = styled.div`
       font-size: 48px;
       margin: 50px 0 70px 0;
    }
-   text {
+   article {
       display: block;
       max-width: 600px;
       font-weight: 400;
@@ -86,37 +86,37 @@ const Container = styled.div`
 
 export const Skills = () => {
    const mappedSkills = skills.map(({ icon, title }) => (
-      <Skill Icon={icon} title={title} key="title" />
+      <Skill Icon={icon} title={title} key={title} />
    ))
    const mappedMetaSkills = metaSkills.map(({ icon, title }) => (
-      <Skill Icon={icon} title={title} key="title" />
+      <Skill Icon={icon} title={title} key={title} />
    ))
    const mappedPersonalSkills = personalSkills.map(({ icon, title }) => (
-      <Skill Icon={icon} title={title} key="title" />
+      <Skill Icon={icon} title={title} key={title} />
    ))
    return (
       <StyledPage>
          <Container>
             <h1>My Tech Stack</h1>
-            <text>
+            <article>
                I have tried out lots of different technologies and am always
                open to new things. Here are the ones I have got most experience
                with:
-            </text>
+            </article>
             <StyledSkills>{mappedSkills}</StyledSkills>
             <h1>My meta skills</h1>
-            <text>
+            <article>
                I love exploring the world around me by talking to people,
                learning about their culture and making new connections. Over
                time I have developed many useful skills, here are some of them:
-            </text>
+            </article>
             <StyledSkills>{mappedMetaSkills}</StyledSkills>
             <h1>My personal skills</h1>
-            <text>
+            <article>
                I have always loved learning. There are so many things one can
                learn just by going online, it's fascinating! Here are things
                I've learned that help me in my professional setting:
-            </text>
+            </article>
             <StyledSkills>{mappedPersonalSkills}</StyledSkills>
          </Container>
       </StyledPage>

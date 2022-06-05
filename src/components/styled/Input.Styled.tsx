@@ -139,7 +139,7 @@ const StyledLabel = styled.label`
    & > input:focus + span::after,
    & > textarea:focus + span::before,
    & > textarea:focus + span::after {
-      border-top-color: ${({ theme }) => theme.colors.primary} !important;
+      border-top-color: ${({ theme }) => theme.colors.primary};
       box-shadow: inset 0 1px ${({ theme }) => theme.colors.primary};
    }
 
@@ -148,9 +148,9 @@ const StyledLabel = styled.label`
    & > input:disabled + span,
    & > textarea:disabled,
    & > textarea:disabled + span {
-      border-color: rgba(0, 0, 0, 0.38); !important;
-      border-top-color: transparent !important;
-      color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+      border-color: rgba(0, 0, 0, 0.38);
+      border-top-color: transparent;
+      color: rgba(0, 0, 0, 0.38);
       pointer-events: none;
    }
 
@@ -158,27 +158,21 @@ const StyledLabel = styled.label`
    & > input:disabled + span::after,
    & > textarea:disabled + span::before,
    & > textarea:disabled + span::after {
-      border-top-color: rgba(
-         var(--pure-material-onsurface-rgb, 0, 0, 0),
-         0.38
-      ) !important;
+      border-top-color: rgba(0, 0, 0, 0.38);
    }
 
    & > input:disabled:placeholder-shown,
    & > input:disabled:placeholder-shown + span,
    & > textarea:disabled:placeholder-shown,
    & > textarea:disabled:placeholder-shown + span {
-      border-top-color: rgba(
-         var(--pure-material-onsurface-rgb, 0, 0, 0),
-         0.38
-      ) !important;
+      border-top-color: rgba(0, 0, 0, 0.38);
    }
 
    & > input:disabled:placeholder-shown + span::before,
    & > input:disabled:placeholder-shown + span::after,
    & > textarea:disabled:placeholder-shown + span::before,
    & > textarea:disabled:placeholder-shown + span::after {
-      border-top-color: transparent !important;
+      border-top-color: transparent;
    }
 
    @media not all and (min-resolution: 0.001dpcm) {

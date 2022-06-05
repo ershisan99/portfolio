@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-// @ts-ignore (need ignore!)
+// @ts-ignore (no type declarations for vantajs)
 import BIRDS from 'vanta/dist/vanta.birds.min'
-import { Button } from '../components/Button.styled'
+import { Button } from '../components/styled/Button.styled'
 import { device, theme } from '../GlobalStyles'
-const MainInfo = styled.div`
+const StyledArticle = styled.article`
    h1 {
       font-weight: 700;
       font-size: 50px;
@@ -30,14 +30,13 @@ const MainInfo = styled.div`
       color: ${({ theme }) => theme.colors.primary};
    }
 `
-const StyledPage = styled.div`
+const StyledSection = styled.section`
    padding: 0 30px;
    min-height: calc(100vh - 64px);
 
    @media ${device.tablet} {
       padding: 0 40px;
    }
-
    @media ${device.laptop} {
       padding: 0 100px;
    }
@@ -47,6 +46,7 @@ const Container = styled.div`
    display: flex;
    align-items: center;
    justify-content: space-between;
+
    img {
       max-width: 350px;
       margin-right: 160px;
@@ -85,9 +85,9 @@ export const Intro = () => {
       }
    }, [vantaEffect])
    return (
-      <StyledPage ref={myRef}>
+      <StyledSection ref={myRef} id="intro">
          <Container>
-            <MainInfo>
+            <StyledArticle>
                <h5>Hello,</h5>
                <h1>
                   I’m <strong>Andrii Zadorozhnyi</strong>
@@ -95,8 +95,8 @@ export const Intro = () => {
                <p>Developer and mentor</p>
                {/* todo: download link */}
                <Button onClick={() => alert('haaa')}>Download CV</Button>
-            </MainInfo>
+            </StyledArticle>
          </Container>
-      </StyledPage>
+      </StyledSection>
    )
 }

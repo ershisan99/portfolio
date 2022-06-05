@@ -1,6 +1,4 @@
-import { ThemeProvider } from 'styled-components'
-import { Header } from './components/Header'
-import GlobalStyles, { theme } from './GlobalStyles'
+import Layout from './components/layout/Layout'
 import { Contacts } from './pages/Contacts'
 import { Intro } from './pages/Intro'
 import { Projects } from './pages/Projects'
@@ -8,16 +6,12 @@ import { Skills } from './pages/Skills'
 
 function App() {
    return (
-      <ThemeProvider theme={theme}>
-         <GlobalStyles />
-         <div>
-            <Header />
-            <Intro />
-            <Skills />
-            <Projects />
-            <Contacts />
-         </div>
-      </ThemeProvider>
+      <Layout>
+         <Intro />
+         <Skills />
+         <Projects />
+         <Contacts />
+      </Layout>
    )
 }
 

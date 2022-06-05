@@ -7,7 +7,7 @@ type PropsType = {
    title: string
 }
 
-const StyledSkill = styled.div`
+const StyledSkill = styled.figure`
    padding: 20px 27px;
    width: 100%;
    min-width: 280px;

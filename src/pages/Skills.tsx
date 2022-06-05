@@ -95,7 +95,7 @@ export const Skills = () => {
       <Skill Icon={icon} title={title} key={title} />
    ))
    return (
-      <StyledPage>
+      <StyledPage id="skills">
          <Container>
             <h1>My Tech Stack</h1>
             <article>

@@ -70,7 +70,6 @@ const PreviewContainer = styled.div`
          background: ${({ theme }) => theme.colors.primary};
          color: ${({ theme }) => theme.colors.textSecondary};
       }
-      text-decoration: none;
    }
 `
 const LinkContainer = styled.div`

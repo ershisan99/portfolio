@@ -49,7 +49,7 @@ export const Projects = () => {
       <Project {...project} key={project.title} />
    ))
    return (
-      <StyledPage>
+      <StyledPage id="projects">
          <StyledProjects>
             <h1>My projects</h1>
             <article>

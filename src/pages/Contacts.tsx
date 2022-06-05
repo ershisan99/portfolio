@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Button } from '../components/Button.styled'
-import { Input, Textarea } from '../components/Input'
+import { Button } from '../components/styled/Button.styled'
+import { Input, Textarea } from '../components/styled/Input.Styled'
 import { StyledPage } from '../components/StyledPage'
 
 const StyledContacts = styled.div`
@@ -38,7 +38,7 @@ const StyledContacts = styled.div`
 
 export const Contacts = () => {
    return (
-      <StyledPage>
+      <StyledPage id="contacts">
          <StyledContacts>
             <h1>Get in Touch</h1>
             <article>

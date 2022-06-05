@@ -33,15 +33,16 @@ const GlobalStyles = createGlobalStyle<{ theme: typeof theme }>`
 
   * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
-
-  body {
+ 
+  body { 
     background: ${({ theme }) => theme.colors.body};
     color: ${({ theme }) => theme.colors.text};
     font-family: 'Nunito Sans', sans-serif;
     max-width: 100vw;
     max-height: 100vh;
-
+    scroll-behavior: smooth;
     h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p {
       margin-top: 0;
       margin-bottom: 0;
@@ -53,6 +54,15 @@ const GlobalStyles = createGlobalStyle<{ theme: typeof theme }>`
 
   img {
     max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  figure{
+    margin: 0;
   }
 `
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { device, size } from '../GlobalStyles'
 
-export const StyledPage = styled.div`
+export const StyledPage = styled.section`
    padding: 0 30px;
    min-height: 100vh;
 

@@ -63,15 +63,10 @@ const StyledSkills = styled.div`
    @media ${device.laptopL} {
       grid-template-columns: repeat(4, 1fr);
    }
-   @media ${device.desktop} {
-      grid-template-columns: repeat(5, 1fr);
-   }
-   @media ${device.desktopL} {
-      grid-template-columns: repeat(6, 1fr);
-   }
 `
 
 const Container = styled.div`
+   padding-bottom: 120px;
    h1 {
       text-align: center;
       font-family: 'Nunito';

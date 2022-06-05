@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { device } from '../GlobalStyles'
+import { device, size } from '../GlobalStyles'
 
 export const StyledPage = styled.div`
    padding: 0 30px;
-   min-height: calc(100vh - 64px);
+   min-height: 100vh;
 
    @media ${device.tablet} {
       padding: 0 40px;
@@ -11,5 +11,12 @@ export const StyledPage = styled.div`
 
    @media ${device.laptop} {
       padding: 0 100px;
+   }
+   @media ${device.laptopL} {
+      display: flex;
+      justify-content: center;
+      & > div {
+         width: ${size.laptopL};
+      }
    }
 `

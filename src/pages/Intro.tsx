@@ -3,8 +3,7 @@ import styled from 'styled-components'
 // @ts-ignore (need ignore!)
 import BIRDS from 'vanta/dist/vanta.birds.min'
 import { Button } from '../components/Button.styled'
-import { StyledPage } from '../components/StyledPage'
-import { theme } from '../GlobalStyles'
+import { device, theme } from '../GlobalStyles'
 const MainInfo = styled.div`
    h1 {
       font-weight: 700;
@@ -29,6 +28,18 @@ const MainInfo = styled.div`
    }
    strong {
       color: ${({ theme }) => theme.colors.primary};
+   }
+`
+const StyledPage = styled.div`
+   padding: 0 30px;
+   min-height: calc(100vh - 64px);
+
+   @media ${device.tablet} {
+      padding: 0 40px;
+   }
+
+   @media ${device.laptop} {
+      padding: 0 100px;
    }
 `
 const Container = styled.div`

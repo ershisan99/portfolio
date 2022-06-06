@@ -10,6 +10,7 @@ type PropsType = {
 const StyledIcon = styled(IoIosArrowUp)`
    color: ${({ theme }) => theme.colors.textSecondary};
 `
+// todo: add footer, mentions
 const Layout: FC<PropsType> = ({ children }) => {
    return (
       <ThemeProvider theme={theme}>

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 // @ts-ignore (no type declarations for vantajs)
 import BIRDS from 'vanta/dist/vanta.birds.min'
-import { Button } from '../components/styled/Button.styled'
+import { AnchorButton } from '../components/styled/AnchorButton.styled'
 import { device, theme } from '../GlobalStyles'
 const StyledArticle = styled.article`
    h1 {
@@ -23,7 +23,7 @@ const StyledArticle = styled.article`
       letter-spacing: 0.06em;
       margin-top: 20px;
    }
-   button {
+   a {
       margin-top: 36px;
    }
    strong {
@@ -93,8 +93,13 @@ export const Intro = () => {
                   I’m <strong>Andrii Zadorozhnyi</strong>
                </h1>
                <p>Developer and mentor</p>
-               {/* todo: download link */}
-               <Button onClick={() => alert('haaa')}>Download CV</Button>
+               <AnchorButton
+                  href="/files/CV_Andrii_Zadorozhnyi.pdf"
+                  target="_blank"
+                  download
+               >
+                  Download CV
+               </AnchorButton>
             </StyledArticle>
          </Container>
       </StyledSection>

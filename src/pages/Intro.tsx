@@ -94,9 +94,8 @@ export const Intro = () => {
                </h1>
                <p>Developer and mentor</p>
                <AnchorButton
-                  href="/files/CV_Andrii_Zadorozhnyi.pdf"
+                  href="https://drive.google.com/file/d/15Seg1HAaqwcgwxunIPXj-AK0VFQrZeY3/view?usp=sharing"
                   target="_blank"
-                  download
                >
                   Download CV
                </AnchorButton>

@@ -94,7 +94,7 @@ export const Intro = () => {
                </h1>
                <p>Developer and mentor</p>
                <AnchorButton
-                  href="https://drive.google.com/file/d/15Seg1HAaqwcgwxunIPXj-AK0VFQrZeY3/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1R4yurMLHB6h1q9CbRTpFHVdV-UR6SpPJ/view?usp=sharing"
                   target="_blank"
                >
                   Download CV
